@@ -8,10 +8,11 @@ public class Item {
     public final double price;
     private final double maxWeight = 100.0;
     private final double minWeight = 0.0;
+    private final double maxPrice = 100.0;
 
     public Item(int id, double weight, double price) throws ItemInitException {
         this.id = id;
-        if (weight > this.maxWeight || weight < this.minWeight) {
+        if (weight > this.maxWeight || weight < this.minWeight || price > this.maxPrice) {
             throw new ItemInitException();
         }
         this.weight = weight;
